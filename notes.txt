@@ -1,0 +1,20 @@
+create virtualenv with python 3.5 base
+pip install coookiecutter
+cookiecutter https://github.com/pydanny/cookiecutter-django
+
+pip install -r requirements/local.txt
+
+
+docker run --name local-postgres9.3.6 -p 5432:5432 -e POSTGRES_PASSWORD=mypassword -d  postgres:9.3.6
+
+use console to log into postgres the first time:
+
+psql -h localhost -p 5432  -U postgres --password
+mypassword
+
+create role djangogirls with CREATEDB LOGIN PASSWORD 'mypassword';
+create database djangogirls;
+
+python manage.py migrate
+
+don't forget to migrate and create superuser
