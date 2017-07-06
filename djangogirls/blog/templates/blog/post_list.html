@@ -1,4 +1,15 @@
-<html>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</html>
+{% extends "base.html" %}
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+    <div>
+        <h1><a href="{% url 'blog:post_list' %}">Django Girls Blog</a></h1>
+    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
