@@ -18,3 +18,26 @@ create database djangogirls;
 python manage.py migrate
 
 don't forget to migrate and create superuser
+
+
+
+operations on app:
+python manage.py startapp blog
+ - moved directory into djgirls folder (not top level)
+
+
+added code to blog model:
+class Post(models.Model):
+    author = models.ForeignKey('users.User')
+
+then generate migration
+- makemigrations blog
+
+checkt out the sql
+- sqlmigrate blog 0001
+
+
+- added admin code to register blog in admin.py
+- create superuser
+
+import blog urls into global collection inside of /config

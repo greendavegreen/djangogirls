@@ -55,6 +55,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     # custom users app
     'djangogirls.users.apps.UsersConfig',
+    'djangogirls.blog.apps.BlogConfig',
     # Your stuff: custom apps go here
 ]
 
@@ -112,7 +113,6 @@ DATABASES = {
     'default': env.db('DATABASE_URL', default='postgres://djangogirls:mypassword@localhost:5432/djangogirls'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -264,7 +264,6 @@ LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
-
 
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = r'^admin/'
