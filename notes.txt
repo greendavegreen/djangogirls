@@ -41,3 +41,7 @@ checkt out the sql
 - create superuser
 
 import blog urls into global collection inside of /config
+
+created urls.py inside of blog (referred to from global url config)
+reference view that doesn't exist yet.
+then create it
