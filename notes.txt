@@ -43,7 +43,7 @@ checkt out the sql
 import blog urls into global collection inside of /config
 
 created urls.py inside of blog (referred to from global url config)
-reference view that doesn't exist yet.
+reference view that dhttoesn't exist yet.
 then create it
 
 the ORM is alive now:
@@ -53,3 +53,6 @@ Post.objects.filter(title__contains='title')
 Post.objects.filter(published_date__lte=timezone.now())
 Post.objects.order_by('-created_date')
 Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+
+
+http://devhelp.lebanon.cd-adapco.com/secure/attachment/10140/setupws.sh
